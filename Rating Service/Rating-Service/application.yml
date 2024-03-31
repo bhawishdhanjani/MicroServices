@@ -1,0 +1,24 @@
+server:
+  port: 8083
+  
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/ratingmicroservices
+    username: root
+    password: Mukeshhit123@@
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  application:
+    name: RATING-SERVICE
+  config:
+    import: optional:configserver:http://localhost:8085
+
+      
+okta:
+  oauth2:
+    issuer: https://dev-18838416.okta.com/oauth2/default
+    audience: api://default
